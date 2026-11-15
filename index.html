@@ -50,7 +50,7 @@ linear-gradient(160deg,var(--navy) 0%,var(--bluedk) 55%,#00577F 100%)}
 .hero .date{display:inline-block;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:8px 18px;margin-top:22px;font-weight:600;font-size:14px;color:#E8F2F7}
 /* sections */
 section{padding:72px 0}
-h2{font-size:clamp(26px,4.2vw,38px);font-weight:800;color:var(--bluedk);text-align:center;letter-spacing:-.02em;line-height:1.15}
+h2{font-size:clamp(26px,4.2vw,38px);font-weight:800;color:var(--bluedk);text-align:center;letter-spacing:-.02em;line-height:1.15;text-wrap:balance}
 h2::after{content:"";display:block;width:46px;height:4px;border-radius:4px;margin:14px auto 0;background:linear-gradient(90deg,var(--warm),var(--warm2))}
 .vote h2::after{background:#FFB48F}
 .lead{text-align:center;color:var(--muted);max-width:660px;margin:14px auto 40px;font-size:16.5px}
@@ -171,6 +171,20 @@ body.modal-open{overflow:hidden}
 .quote .qi{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:14px;color:#fff;background:linear-gradient(135deg,var(--blue),var(--bluedk))}
 .quote b{display:block;color:var(--bluedk);font-size:15px;line-height:1.25}
 .quote small{display:block;color:var(--muted);font-size:13px;line-height:1.35}
+/* conference quality */
+.confq{background:var(--cream)}
+.eyebrow{text-align:center;color:var(--warm);font-weight:800;letter-spacing:.16em;text-transform:uppercase;font-size:13px;margin-bottom:10px}
+.cqquote{text-align:center;font-style:italic;font-size:clamp(17px,2.4vw,21px);color:var(--ink);max-width:760px;margin:22px auto 40px;line-height:1.5}
+.cqquote b{color:var(--warm);font-weight:700}
+.cqgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.cq{display:flex;gap:18px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-left:5px solid var(--warm);border-radius:16px;padding:24px;box-shadow:var(--shadow);transition:transform .25s,box-shadow .25s}
+.cq:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.cqn{flex:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:18px;color:#fff;background:linear-gradient(135deg,var(--blue),var(--bluedk))}
+.cq h3{color:var(--bluedk);font-size:18px;line-height:1.3;margin-bottom:6px}
+.cq p{color:var(--muted);font-size:15px}
+.cqband{margin-top:22px;border-radius:18px;padding:26px 30px;color:#E3EEF4;font-size:17px;text-align:center;background:radial-gradient(500px 200px at 100% 0%,rgba(224,122,79,.3),transparent 60%),linear-gradient(150deg,var(--navy),var(--bluedk));box-shadow:var(--shadow)}
+.cqband b{color:#fff}
+@media(max-width:640px){.cqgrid{grid-template-columns:1fr}.cq{padding:20px}.cqband{padding:22px 20px;font-size:16px}}
 /* reveal */
 .js .rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
 .js .rv.in{opacity:1;transform:none}
@@ -180,7 +194,7 @@ body.modal-open{overflow:hidden}
 </style>
 </head>
 <body>
-<nav class="nav"><div class="wrap"><a class="brand" href="#top"><span class="mark">27</span><span>IEEE Hyderabad Section &middot; Team 2027</span></a><div class="links"><a href="#team">Team</a><a href="#promises">Plans</a><a href="#regions">Regions</a><a href="#contact">Contact</a></div><a class="cta" href="#vote">How to vote &rarr;</a></div></nav>
+<nav class="nav"><div class="wrap"><a class="brand" href="#top"><span class="mark">27</span><span>IEEE Hyderabad Section &middot; Team 2027</span></a><div class="links"><a href="#team">Team</a><a href="#promises">Plans</a><a href="#conferences">Conferences</a><a href="#regions">Regions</a><a href="#contact">Contact</a></div><a class="cta" href="#vote">How to vote &rarr;</a></div></nav>
 
 <header class="hero" id="top"><div class="wrap">
   <div class="kick">IEEE Hyderabad Section &middot; 2027 Officer Election</div>
@@ -200,6 +214,14 @@ body.modal-open{overflow:hidden}
 <section id="promises"><div class="wrap">
   <h2>What we'll do together</h2>
   <div class="grid"><div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></div><h3>Every member, heard</h3><p>From every college and Society &mdash; private or elite, not a favoured few. Heard, acted on, and recognised on merit.</p></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div><h3>Student branches &amp; chapters backed</h3><p>Counsellors heard and approved funds released promptly &mdash; with real visits to serve and listen.</p></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 22V4"/><path d="M4 4h13l-2.5 4L17 12H4"/></svg></div><h3>Simpler conferences</h3><p>A single-window system for approvals, so even student branches can host quality conferences without the red tape.</p></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M7 21h10"/><path d="M5 7h14"/><path d="m5 7-3 7a3 3 0 0 0 6 0Z"/><path d="m19 7-3 7a3 3 0 0 0 6 0Z"/></svg></div><h3>Transparent funds, smooth GIEEE move</h3><p>Clear approvals and reimbursements, prompt records, and guidance for members at every step of the GIEEE transition (IEEE&rsquo;s move to a single global finance system).</p></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div><h3>Responsive, open leadership</h3><p>Every email and call answered, prompt minutes and a shared calendar &mdash; decisions taken with the whole committee.</p></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div><h3>Your data, respected</h3><p>Member information used strictly and lawfully &mdash; in line with IEEE's privacy policy, GDPR and India's DPDP Act. Communication preferences honoured: if you've opted out, you won't be spammed.</p></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20"/></svg></div><h3>Every institution, every language</h3><p>A Section for every college and region &mdash; whatever your language or background, you belong here equally.</p></div></div>
+</div></section>
+
+<section id="conferences" class="confq"><div class="wrap">
+  <div class="eyebrow">Conference quality</div>
+  <h2>Conferences we&rsquo;re proud of</h2>
+  <p class="cqquote">&ldquo;Every IEEE conference in our Section should be one members are <b>proud to publish in.</b>&rdquo;</p>
+  <div class="cqgrid"><div class="cq"><span class="cqn">1</span><div><h3>Clear, published criteria</h3><p>Every organiser knows the standard up front &mdash; so sponsorship is fair, merit-based and transparent.</p></div></div><div class="cq"><span class="cqn">2</span><div><h3>Support before approval</h3><p>A simple checklist and mentoring, so proposals meet IEEE&rsquo;s quality and integrity bar the first time.</p></div></div><div class="cq"><span class="cqn">3</span><div><h3>Integrity screening help</h3><p>Peer-review quality and plagiarism checks, using expertise already within the Section.</p></div></div><div class="cq"><span class="cqn">4</span><div><h3>No last-minute surprises</h3><p>Fewer conferences held or pulled late &mdash; protecting authors, students and the Section&rsquo;s good name.</p></div></div></div>
+  <div class="cqband">A team that has <b>organised and chaired IEEE conferences</b> &mdash; here to help organisers succeed, not to police them.</div>
 </div></section>
 
 <section class="region" id="regions"><div class="wrap">
@@ -297,7 +319,7 @@ body.modal-open{overflow:hidden}
 <footer class="foot">Personal campaign communication shared with fellow IEEE members. The opinions expressed herein are the opinions of the authors and not necessarily the opinions of IEEE. Not an official IEEE communication, and not endorsed by IEEE.</footer>
 <script>
 (function(){var d=document.documentElement;if(!('IntersectionObserver' in window))return;d.classList.add('js');
-var els=document.querySelectorAll('.tcard,.card,.rcard,.ccard,.mapbox,.vote,.quote');
+var els=document.querySelectorAll('.tcard,.card,.rcard,.ccard,.mapbox,.vote,.quote,.cq,.cqband');
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -40px 0px'});
 els.forEach(function(el,i){el.classList.add('rv');el.style.transitionDelay=((i%4)*70)+'ms';el.addEventListener('transitionend',function f(ev){if(ev.propertyName!=='opacity')return;el.classList.remove('rv','in');el.style.transitionDelay='';el.removeEventListener('transitionend',f);});io.observe(el);});})();
 </script>
