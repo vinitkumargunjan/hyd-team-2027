@@ -9,75 +9,129 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali&family=Noto+Sans+Devanagari&family=Noto+Sans+Gujarati&family=Noto+Sans+Malayalam&family=Noto+Sans+Tamil&family=Noto+Sans+Telugu&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-:root{--blue:#00629B;--bluedk:#00435B;--ink:#20323C;--muted:#6B5F52;--cream:#FBF4E8;--warm:#BD4A2A;--sand:#F3E7D4;--cardw:#FFFDF9;--line:#E7DAC4;}
+:root{--blue:#00629B;--bluedk:#00435B;--navy:#062A3A;--ink:#1D2E38;--muted:#5E6B73;--cream:#FBF6EE;--warm:#C2502E;--warm2:#E07A4F;--sand:#F4EADB;--cardw:#FFFFFF;--line:#EADFCF;--tint:#FCE9DF;
+--shadow:0 1px 2px rgba(6,42,58,.06),0 8px 24px -12px rgba(6,42,58,.18);--shadow-lg:0 2px 4px rgba(6,42,58,.06),0 22px 44px -18px rgba(6,42,58,.32)}
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'Poppins',sans-serif;background:var(--cream);color:var(--ink);line-height:1.6}
-.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:'Poppins',sans-serif;background:var(--cream);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
 a{color:var(--warm)}
-.nav{background:var(--blue);color:#fff;position:sticky;top:0;z-index:10}
-.nav .wrap{display:flex;justify-content:space-between;align-items:center;padding:14px 20px}
-.nav .brand{font-weight:800;font-size:16px;letter-spacing:.02em}
-.nav .cta{background:var(--warm);color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:8px 16px;border-radius:20px;white-space:nowrap}
-.hero{padding:60px 0 44px;text-align:center}
-.kick{color:var(--warm);font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:14px}
-.hero h1{font-size:clamp(36px,7vw,64px);font-weight:900;color:var(--bluedk);letter-spacing:-.02em;line-height:1.02;margin-top:10px}
-.hero p{font-size:clamp(17px,2.8vw,22px);font-weight:500;color:var(--ink);max-width:720px;margin:18px auto 0}
-.hero p b{color:var(--warm);font-weight:700}
-.hero .date{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:22px;padding:9px 20px;margin-top:22px;font-weight:700;color:var(--bluedk)}
-section{padding:34px 0}
-h2{font-size:clamp(24px,4vw,32px);font-weight:900;color:var(--bluedk);text-align:center;margin-bottom:8px}
-.lead{text-align:center;color:var(--muted);max-width:660px;margin:0 auto 26px}
-.team{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.tcard{background:var(--cardw);border:1px solid var(--line);border-top:5px solid var(--warm);border-radius:16px;padding:26px 26px;text-align:center}
-.av{width:84px;height:84px;margin:0 auto 14px;border-radius:50%;overflow:hidden;background:linear-gradient(145deg,var(--blue),var(--bluedk));color:#fff;font-weight:800;font-size:28px;display:flex;align-items:center;justify-content:center;letter-spacing:.02em;border:3px solid #fff;box-shadow:0 4px 12px rgba(0,67,91,.18)}
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(6,42,58,.82);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav .wrap{display:flex;align-items:center;gap:20px;padding:12px 20px}
+.nav .brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-weight:700;font-size:15px;letter-spacing:.01em;min-width:0}
+.nav .brand span:last-child{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mark{flex:none;width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,var(--warm2),var(--warm));display:grid;place-items:center;font-weight:900;font-size:14px;color:#fff}
+.nav .links{display:flex;gap:22px;margin-left:auto}
+.nav .links a{color:#CFE3EE;text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
+.nav .links a:hover{color:#fff}
+.nav .cta{background:var(--warm);color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:9px 18px;border-radius:999px;white-space:nowrap;transition:background .2s,transform .2s}
+.nav .cta:hover{background:var(--warm2);transform:translateY(-1px)}
+/* hero */
+.hero{position:relative;overflow:hidden;padding:88px 0 80px;text-align:center;color:#fff;background:
+radial-gradient(900px 420px at 85% -10%,rgba(224,122,79,.38),transparent 60%),
+radial-gradient(700px 400px at 0% 110%,rgba(0,98,155,.9),transparent 60%),
+linear-gradient(160deg,var(--navy) 0%,var(--bluedk) 55%,#00577F 100%)}
+.hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.09) 1px,transparent 1px);background-size:22px 22px;-webkit-mask-image:linear-gradient(to bottom,#000 30%,transparent);mask-image:linear-gradient(to bottom,#000 30%,transparent);pointer-events:none}
+.hero .wrap{position:relative}
+.kick{display:inline-block;color:#FFD2BD;font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:12.5px;padding:7px 16px;border:1px solid rgba(255,210,189,.35);border-radius:999px;background:rgba(255,255,255,.05)}
+.hero h1{font-size:clamp(38px,7.4vw,74px);font-weight:900;color:#fff;letter-spacing:-.03em;line-height:1.02;margin-top:22px}
+.hero h1 .hl{background:linear-gradient(90deg,#FFB48F,#FF8A5B 60%,#FFC9A8);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{font-size:clamp(16.5px,2.4vw,20px);font-weight:400;color:#D5E6EF;max-width:720px;margin:22px auto 0}
+.hero p b{color:#fff;font-weight:700}
+.mltag{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px 12px;max-width:900px;margin:30px auto 0;font-size:15px;font-weight:500;color:#FFD2BD;line-height:1.5}
+.mltag .mldot{color:rgba(255,255,255,.3)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:34px}
+.btn{display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:15.5px;padding:13px 26px;border-radius:999px;text-decoration:none;transition:transform .2s,box-shadow .2s,background .2s}
+.btn-primary{background:var(--warm);color:#fff;box-shadow:0 10px 24px -10px rgba(224,122,79,.8)}
+.btn-primary:hover{background:var(--warm2);transform:translateY(-2px)}
+.btn-ghost{color:#fff;border:1.5px solid rgba(255,255,255,.35)}
+.btn-ghost:hover{background:rgba(255,255,255,.08);transform:translateY(-2px)}
+.hero .date{display:inline-block;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:8px 18px;margin-top:22px;font-weight:600;font-size:14px;color:#E8F2F7}
+/* sections */
+section{padding:72px 0}
+h2{font-size:clamp(26px,4.2vw,38px);font-weight:800;color:var(--bluedk);text-align:center;letter-spacing:-.02em;line-height:1.15}
+h2::after{content:"";display:block;width:46px;height:4px;border-radius:4px;margin:14px auto 0;background:linear-gradient(90deg,var(--warm),var(--warm2))}
+.vote h2::after{background:#FFB48F}
+.lead{text-align:center;color:var(--muted);max-width:660px;margin:14px auto 40px;font-size:16.5px}
+/* team */
+.team{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:8px}
+.tcard{position:relative;background:var(--cardw);border:1px solid var(--line);border-radius:20px;padding:30px 22px 26px;text-align:center;box-shadow:var(--shadow);transition:transform .25s,box-shadow .25s;overflow:hidden}
+.tcard::before{content:"";position:absolute;inset:0 0 auto 0;height:86px;background:linear-gradient(135deg,var(--bluedk),var(--blue));}
+.tcard:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.av{position:relative;width:116px;height:116px;margin:12px auto 16px;border-radius:50%;overflow:hidden;background:linear-gradient(145deg,var(--blue),var(--bluedk));border:4px solid #fff;box-shadow:0 0 0 3px var(--tint),0 10px 24px -8px rgba(0,67,91,.45)}
 .av img{width:100%;height:100%;object-fit:cover;display:block}
-.tcard .role{color:var(--warm);font-weight:800;letter-spacing:.1em;text-transform:uppercase;font-size:12.5px}
-.tcard strong{display:block;font-size:22px;color:var(--bluedk);margin-top:6px;line-height:1.15}
-.tcard .inst{display:block;color:var(--muted);font-size:14.5px;margin-top:4px}
-.tcard p{color:var(--ink);font-size:15.5px;margin-top:12px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.card{background:var(--cardw);border:1px solid var(--line);border-radius:14px;padding:22px 24px}
-.card .ic{width:44px;height:44px;border-radius:11px;background:#FBE6DC;color:var(--warm);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:12px}
-.card h3{color:var(--bluedk);font-size:18px;margin-bottom:6px}
+.role{display:inline-block;color:var(--warm);background:var(--tint);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:11px;padding:5px 11px;border-radius:999px;line-height:1.3}
+.tcard strong{display:block;font-size:20px;color:var(--bluedk);margin-top:12px;line-height:1.2}
+.tcard .inst{display:block;color:var(--muted);font-size:13.5px;margin-top:6px;line-height:1.4}
+.tcard p{color:var(--ink);font-size:15px;margin-top:14px;padding-top:14px;border-top:1px dashed var(--line)}
+/* promises */
+#promises{background:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px;margin-top:40px}
+.card{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:26px;transition:transform .25s,box-shadow .25s,border-color .25s,background .25s}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);background:#fff;border-color:#F0CDB9}
+.ic,.ric{width:48px;height:48px;flex:none;border-radius:14px;background:linear-gradient(135deg,var(--warm2),var(--warm));color:#fff;display:grid;place-items:center;box-shadow:0 8px 18px -8px rgba(194,80,46,.7)}
+.ic svg,.ric svg{width:24px;height:24px}
+.ic{margin-bottom:16px}
+.card h3{color:var(--bluedk);font-size:18px;line-height:1.3;margin-bottom:8px}
 .card p{color:var(--muted);font-size:15px}
+@media(min-width:900px){.grid{grid-template-columns:repeat(3,1fr)}.grid .card:last-child{grid-column:1 / -1;display:flex;gap:20px;align-items:center}.grid .card:last-child .ic{margin-bottom:0}.grid .card:last-child h3{flex:0 0 260px;margin:0}}
+/* regions */
 .region{background:var(--sand)}
-.rgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
-.rcard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 22px;display:flex;gap:14px;align-items:flex-start}
+.rgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.rcard{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;display:flex;gap:18px;align-items:flex-start;box-shadow:var(--shadow);transition:transform .25s,box-shadow .25s}
+.rcard:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
 .rcard:last-child{grid-column:1 / -1}
-.ric{width:46px;height:46px;flex:none;border-radius:11px;background:#FBE6DC;color:var(--warm);display:flex;align-items:center;justify-content:center;font-size:22px}
-.rcard h3{color:var(--bluedk);font-size:18px;margin-bottom:4px}
+.ric{background:linear-gradient(135deg,var(--blue),var(--bluedk));box-shadow:0 8px 18px -8px rgba(0,67,91,.7)}
+.rcard h3{color:var(--bluedk);font-size:18px;line-height:1.3;margin-bottom:6px}
 .rcard p{color:var(--muted);font-size:15px}
-.vote{background:var(--bluedk);color:#fff;border-radius:16px;padding:30px 32px;text-align:center}
-.vote ol{text-align:left;max-width:540px;margin:14px auto 0;padding-left:22px}
-.vote li{margin:6px 0}
-.vote b{color:#fff}
-.vote .date{display:inline-block;background:var(--warm);color:#fff;font-weight:800;padding:9px 20px;border-radius:22px;margin-top:18px}
-.contact{text-align:center}
-.contacts{display:grid;grid-template-columns:1fr 1fr;gap:16px;text-align:left;margin-top:10px}
-.ccard{background:var(--cardw);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
-.ccard .role{color:var(--warm);font-weight:800;letter-spacing:.1em;text-transform:uppercase;font-size:12px}
-.ccard strong{display:block;color:var(--bluedk);font-size:19px;margin-top:4px}
-.ccard .clinks{margin-top:10px;display:flex;flex-direction:column;gap:5px}
-.ccard .clinks a{font-weight:600;font-size:15px;text-decoration:none;word-break:break-word}
-.ccard .todo{color:var(--muted);font-style:italic;font-size:14.5px}
-.mltag{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px 12px;max-width:860px;margin:22px auto 0;font-size:16px;font-weight:600;color:var(--warm);line-height:1.5}
-.mltag .mldot{color:#C9AE88}
-.mapbox{max-width:720px;margin:6px auto 0;background:var(--cardw);border:1px solid var(--line);border-radius:16px;padding:18px}
+/* map */
+.mapbox{max-width:760px;margin:0 auto;background:radial-gradient(circle at 37% 25%,#FDF0E7,#fff 60%);border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:var(--shadow)}
 .mapbox svg{width:100%;height:auto;display:block}
-.mapnote{text-align:center;color:var(--muted);font-size:13px;font-style:italic;margin-top:12px}
-.foot{background:var(--blue);color:#CFE6F2;text-align:center;font-size:13.5px;padding:22px;line-height:1.5;margin-top:34px}
-@media(max-width:640px){.team,.grid,.contacts,.rgrid{grid-template-columns:1fr}.hero{padding:44px 0 32px}.mltag{font-size:14px}}
+.pulse{transform-box:fill-box;transform-origin:center;animation:pulse 2.4s ease-out infinite}
+@keyframes pulse{0%{transform:scale(.7);opacity:.6}100%{transform:scale(2.1);opacity:0}}
+.mapnote{text-align:center;color:var(--muted);font-size:13px;font-style:italic;margin-top:14px}
+/* vote */
+#vote{padding-top:24px}
+.vote{position:relative;overflow:hidden;color:#fff;border-radius:26px;padding:52px 32px;text-align:center;background:radial-gradient(600px 300px at 100% 0%,rgba(224,122,79,.35),transparent 60%),linear-gradient(150deg,var(--navy),var(--bluedk) 60%,var(--blue));box-shadow:var(--shadow-lg)}
+.vote ol{list-style:none;counter-reset:s;text-align:left;max-width:600px;margin:30px auto 0;display:grid;gap:12px}
+.vote li{counter-increment:s;display:flex;gap:16px;align-items:center;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:14px 18px;color:#E3EEF4}
+.vote li::before{content:counter(s);flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-weight:800;background:var(--warm);color:#fff}
+.vote b{color:#fff}
+.vote .date{display:inline-block;background:#fff;color:var(--bluedk);font-weight:700;padding:10px 22px;border-radius:999px;margin-top:28px}
+/* contact */
+.contact{text-align:center}
+.contacts{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;text-align:left}
+.ccard{background:var(--cardw);border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:var(--shadow);transition:transform .25s,box-shadow .25s}
+.ccard:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.ccard strong{display:block;color:var(--bluedk);font-size:18px;margin-top:12px;line-height:1.25}
+.ccard .clinks{margin-top:14px;display:flex;flex-direction:column;gap:8px}
+.ccard .clinks a{display:flex;align-items:center;gap:10px;font-weight:500;font-size:14.5px;color:var(--ink);text-decoration:none;word-break:break-word;transition:color .2s}
+.ccard .clinks a:hover{color:var(--warm)}
+.ccard .clinks a::before{content:"";flex:none;width:30px;height:30px;border-radius:9px;background:var(--tint) no-repeat center/16px}
+.l-mail::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C2502E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='4' width='20' height='16' rx='2'/%3E%3Cpath d='m22 7-10 6L2 7'/%3E%3C/svg%3E")!important}
+.l-tel::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C2502E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z'/%3E%3C/svg%3E")!important}
+.l-web::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C2502E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 3h6v6'/%3E%3Cpath d='M10 14 21 3'/%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/%3E%3C/svg%3E")!important}
+.ccard .todo{color:var(--muted);font-style:italic;font-size:14.5px}
+/* footer */
+.foot{background:var(--navy);color:#A9C3D1;text-align:center;font-size:13px;padding:30px 20px;line-height:1.6;margin-top:40px}
+/* reveal */
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.js .rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .rv{opacity:1;transform:none;transition:none}.pulse{animation:none}*{transition:none!important}}
+@media(max-width:860px){.nav .links{display:none}.nav .cta{margin-left:auto}}
+@media(max-width:640px){section{padding:52px 0}.rgrid{grid-template-columns:1fr}.hero{padding:60px 0 56px}.mltag{font-size:13.5px}.nav .brand span:last-child{font-size:13px}.vote{padding:40px 18px}.card,.rcard,.ccard{padding:20px}}
 </style>
 </head>
 <body>
-<nav class="nav"><div class="wrap"><span class="brand">IEEE Hyderabad Section &middot; Team 2027</span><a class="cta" href="#vote">How to vote &rarr;</a></div></nav>
+<nav class="nav"><div class="wrap"><a class="brand" href="#top"><span class="mark">27</span><span>IEEE Hyderabad Section &middot; Team 2027</span></a><div class="links"><a href="#team">Team</a><a href="#promises">Plans</a><a href="#regions">Regions</a><a href="#contact">Contact</a></div><a class="cta" href="#vote">How to vote &rarr;</a></div></nav>
 
-<header class="hero"><div class="wrap">
+<header class="hero" id="top"><div class="wrap">
   <div class="kick">IEEE Hyderabad Section &middot; 2027 Officer Election</div>
-  <h1>One Team. One Section.<br>Working for You.</h1>
+  <h1>One Team. One Section.<br><span class="hl">Working for You.</span></h1>
   <p>A <b>warmer, more responsive and fairer</b> Section &mdash; for every member, every institution and every student branch. Four of us, one shared commitment, present all year and accountable to you.</p>
   <div class="mltag"><span style="font-family:'Poppins',sans-serif">For every member, everywhere.</span> <span class="mldot">&bull;</span> <span style="font-family:'Noto Sans Devanagari',sans-serif">हर सदस्य के लिए, हर जगह</span> <span class="mldot">&bull;</span> <span style="font-family:'Noto Sans Telugu',sans-serif">ప్రతి సభ్యునికీ, ప్రతిచోటా</span> <span class="mldot">&bull;</span> <span style="font-family:'Noto Sans Bengali',sans-serif">প্রতিটি সদস্যের জন্য, সর্বত্র</span> <span class="mldot">&bull;</span> <span style="font-family:'Noto Sans Devanagari',sans-serif">प्रत्येक सदस्यासाठी, सर्वत्र</span> <span class="mldot">&bull;</span> <span style="font-family:'Noto Sans Gujarati',sans-serif">દરેક સભ્ય માટે, દરેક જગ્યાએ</span> <span class="mldot">&bull;</span> <span style="font-family:'Noto Sans Malayalam',sans-serif">ഓരോ അംഗത്തിനും, എല്ലായിടത്തും</span> <span class="mldot">&bull;</span> <span style="font-family:'Noto Sans Tamil',sans-serif">ஒவ்வொரு உறுப்பினருக்கும், எங்கும்</span></div>
+  <div class="hero-cta"><a class="btn btn-primary" href="#vote">How to vote</a><a class="btn btn-ghost" href="#team">Meet the team</a></div>
   <div class="date">Voting link by email &middot; 25 November 2026 (tentative)</div>
 </div></header>
 
@@ -89,19 +143,19 @@ h2{font-size:clamp(24px,4vw,32px);font-weight:900;color:var(--bluedk);text-align
 
 <section id="promises"><div class="wrap">
   <h2>What we'll do together</h2>
-  <div class="grid"><div class="card"><div class="ic">&#9829;</div><h3>Every member, heard</h3><p>From every college and Society &mdash; private or elite, not a favoured few. Heard, acted on, and recognised on merit.</p></div><div class="card"><div class="ic">&#9823;</div><h3>Student branches &amp; chapters backed</h3><p>Counsellors heard and approved funds released promptly &mdash; with real visits to serve and listen.</p></div><div class="card"><div class="ic">&#9873;</div><h3>Simpler conferences</h3><p>A single-window system for approvals, so even student branches can host quality conferences without the red tape.</p></div><div class="card"><div class="ic">&#9878;</div><h3>Transparent funds, smooth GIEEE move</h3><p>Clear approvals and reimbursements, prompt records, and guidance for members at every step of the GIEEE transition (IEEE&rsquo;s move to a single global finance system).</p></div><div class="card"><div class="ic">&#9993;</div><h3>Responsive, open leadership</h3><p>Every email and call answered, prompt minutes and a shared calendar &mdash; decisions taken with the whole committee.</p></div><div class="card"><div class="ic">&#128274;</div><h3>Your data, respected</h3><p>Member information used strictly and lawfully &mdash; in line with IEEE's privacy policy, GDPR and India's DPDP Act. Communication preferences honoured: if you've opted out, you won't be spammed.</p></div><div class="card"><div class="ic">&#127757;</div><h3>Every institution, every language</h3><p>A Section for every college and region &mdash; whatever your language or background, you belong here equally.</p></div></div>
+  <div class="grid"><div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></div><h3>Every member, heard</h3><p>From every college and Society &mdash; private or elite, not a favoured few. Heard, acted on, and recognised on merit.</p></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div><h3>Student branches &amp; chapters backed</h3><p>Counsellors heard and approved funds released promptly &mdash; with real visits to serve and listen.</p></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 22V4"/><path d="M4 4h13l-2.5 4L17 12H4"/></svg></div><h3>Simpler conferences</h3><p>A single-window system for approvals, so even student branches can host quality conferences without the red tape.</p></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M7 21h10"/><path d="M5 7h14"/><path d="m5 7-3 7a3 3 0 0 0 6 0Z"/><path d="m19 7-3 7a3 3 0 0 0 6 0Z"/></svg></div><h3>Transparent funds, smooth GIEEE move</h3><p>Clear approvals and reimbursements, prompt records, and guidance for members at every step of the GIEEE transition (IEEE&rsquo;s move to a single global finance system).</p></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div><h3>Responsive, open leadership</h3><p>Every email and call answered, prompt minutes and a shared calendar &mdash; decisions taken with the whole committee.</p></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div><h3>Your data, respected</h3><p>Member information used strictly and lawfully &mdash; in line with IEEE's privacy policy, GDPR and India's DPDP Act. Communication preferences honoured: if you've opted out, you won't be spammed.</p></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20"/></svg></div><h3>Every institution, every language</h3><p>A Section for every college and region &mdash; whatever your language or background, you belong here equally.</p></div></div>
 </div></section>
 
-<section class="region"><div class="wrap">
+<section class="region" id="regions"><div class="wrap">
   <h2>One Section &mdash; Everywhere</h2>
   <p class="lead">The Section and its activities should go to where the member is &mdash; not the other way around. Across every district, not just the city.</p>
-  <div class="rgrid"><div class="rcard"><div class="ric">&#127891;</div><div><h3>Student Congress, across every region</h3><p>Our flagship Student / Society Congress rotated beyond Hyderabad &mdash; so branches everywhere can host and take part, instead of feeling cut off.</p></div></div><div class="rcard"><div class="ric">&#127942;</div><div><h3>Flagship conferences for our sub-sections</h3><p>Support to establish flagship conferences in the Guntur and Ananthapuramu sub-sections &mdash; growing regions hosting their own.</p></div></div><div class="rcard"><div class="ric">&#128205;</div><div><h3>An Executive Committee that travels</h3><p>Section ExCom meetings held across about 12 locations on our geographical map &mdash; not only Hyderabad &mdash; so every member's voice is heard where they are.</p></div></div><div class="rcard"><div class="ric">&#129309;</div><div><h3>A dedicated student-branch mentor</h3><p>A dedicated mentor to help student branches apply for IEEE awards and funding &mdash; real guidance, not guesswork.</p></div></div><div class="rcard"><div class="ric">&#127760;</div><div><h3>Every district represented</h3><p>Real representation from Warangal, Tirupati, Sri City, Kurnool, Nandyal, Kadapa, Ananthapuramu, Guntur and across our districts and student branches.</p></div></div></div>
+  <div class="rgrid"><div class="rcard"><div class="ric"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div><div><h3>Student Congress, across every region</h3><p>Our flagship Student / Society Congress rotated beyond Hyderabad &mdash; so branches everywhere can host and take part, instead of feeling cut off.</p></div></div><div class="rcard"><div class="ric"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0Z"/><path d="M17 5h3v2a3 3 0 0 1-3 3"/><path d="M7 5H4v2a3 3 0 0 0 3 3"/></svg></div><div><h3>Flagship conferences for our sub-sections</h3><p>Support to establish flagship conferences in the Guntur and Ananthapuramu sub-sections &mdash; growing regions hosting their own.</p></div></div><div class="rcard"><div class="ric"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div><div><h3>An Executive Committee that travels</h3><p>Section ExCom meetings held across about 12 locations on our geographical map &mdash; not only Hyderabad &mdash; so every member's voice is heard where they are.</p></div></div><div class="rcard"><div class="ric"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div><h3>A dedicated student-branch mentor</h3><p>A dedicated mentor to help student branches apply for IEEE awards and funding &mdash; real guidance, not guesswork.</p></div></div><div class="rcard"><div class="ric"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3 3 6v15l6-3 6 3 6-3V3l-6 3-6-3Z"/><path d="M9 3v15"/><path d="M15 6v15"/></svg></div><div><h3>Every district represented</h3><p>Real representation from Warangal, Tirupati, Sri City, Kurnool, Nandyal, Kadapa, Ananthapuramu, Guntur and across our districts and student branches.</p></div></div></div>
 </div></section>
 
 <section class="mapsec"><div class="wrap">
   <h2>One Section, every region</h2>
   <p class="lead">From Hyderabad to Warangal, Guntur, Kurnool, Nandyal, Ananthapuramu, Kadapa, Tirupati and Sri City &mdash; across Telangana and Andhra Pradesh.</p>
-  <div class="mapbox"><svg viewBox="0 0 680 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Map of key IEEE Hyderabad Section locations"><line x1="251" y1="125" x2="411" y2="81" stroke="#D9A98A" stroke-width="1.6" opacity=".55"/><line x1="251" y1="125" x2="535" y2="207" stroke="#D9A98A" stroke-width="1.6" opacity=".55"/><line x1="251" y1="125" x2="186" y2="244" stroke="#D9A98A" stroke-width="1.6" opacity=".55"/><line x1="251" y1="125" x2="250" y2="270" stroke="#D9A98A" stroke-width="1.6" opacity=".55"/><line x1="251" y1="125" x2="122" y2="331" stroke="#D9A98A" stroke-width="1.6" opacity=".55"/><line x1="251" y1="125" x2="299" y2="347" stroke="#D9A98A" stroke-width="1.6" opacity=".55"/><line x1="251" y1="125" x2="386" y2="411" stroke="#D9A98A" stroke-width="1.6" opacity=".55"/><line x1="251" y1="125" x2="468" y2="417" stroke="#D9A98A" stroke-width="1.6" opacity=".55"/><circle cx="251" cy="125" r="17" fill="none" stroke="#BD4A2A" stroke-width="2" opacity=".35"/><circle cx="251" cy="125" r="10" fill="#BD4A2A"/><text x="264" y="131" text-anchor="start" font-family="Poppins,sans-serif" font-size="18" font-weight="800" fill="#20323C">Hyderabad</text><circle cx="411" cy="81" r="6" fill="#00629B"/><text x="398" y="87" text-anchor="end" font-family="Poppins,sans-serif" font-size="18" font-weight="600" fill="#20323C">Warangal</text><circle cx="535" cy="207" r="6" fill="#00629B"/><text x="522" y="213" text-anchor="end" font-family="Poppins,sans-serif" font-size="18" font-weight="600" fill="#20323C">Guntur</text><circle cx="186" cy="244" r="6" fill="#00629B"/><text x="199" y="250" text-anchor="start" font-family="Poppins,sans-serif" font-size="18" font-weight="600" fill="#20323C">Kurnool</text><circle cx="250" cy="270" r="6" fill="#00629B"/><text x="263" y="276" text-anchor="start" font-family="Poppins,sans-serif" font-size="18" font-weight="600" fill="#20323C">Nandyal</text><circle cx="122" cy="331" r="6" fill="#00629B"/><text x="135" y="337" text-anchor="start" font-family="Poppins,sans-serif" font-size="18" font-weight="600" fill="#20323C">Ananthapuramu</text><circle cx="299" cy="347" r="6" fill="#00629B"/><text x="312" y="353" text-anchor="start" font-family="Poppins,sans-serif" font-size="18" font-weight="600" fill="#20323C">Kadapa</text><circle cx="386" cy="411" r="6" fill="#00629B"/><text x="399" y="417" text-anchor="start" font-family="Poppins,sans-serif" font-size="18" font-weight="600" fill="#20323C">Tirupati</text><circle cx="468" cy="417" r="6" fill="#00629B"/><text x="455" y="445" text-anchor="end" font-family="Poppins,sans-serif" font-size="18" font-weight="600" fill="#20323C">Sri City</text></svg></div>
+  <div class="mapbox"><svg viewBox="0 0 680 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Map of key IEEE Hyderabad Section locations"><line x1="251" y1="125" x2="411" y2="81" stroke="#D9A98A" stroke-width="1.6" opacity=".55"/><line x1="251" y1="125" x2="535" y2="207" stroke="#D9A98A" stroke-width="1.6" opacity=".55"/><line x1="251" y1="125" x2="186" y2="244" stroke="#D9A98A" stroke-width="1.6" opacity=".55"/><line x1="251" y1="125" x2="250" y2="270" stroke="#D9A98A" stroke-width="1.6" opacity=".55"/><line x1="251" y1="125" x2="122" y2="331" stroke="#D9A98A" stroke-width="1.6" opacity=".55"/><line x1="251" y1="125" x2="299" y2="347" stroke="#D9A98A" stroke-width="1.6" opacity=".55"/><line x1="251" y1="125" x2="386" y2="411" stroke="#D9A98A" stroke-width="1.6" opacity=".55"/><line x1="251" y1="125" x2="468" y2="417" stroke="#D9A98A" stroke-width="1.6" opacity=".55"/><circle class="pulse" cx="251" cy="125" r="17" fill="none" stroke="#BD4A2A" stroke-width="2" opacity=".35"/><circle cx="251" cy="125" r="10" fill="#BD4A2A"/><text x="264" y="131" text-anchor="start" font-family="Poppins,sans-serif" font-size="18" font-weight="800" fill="#20323C">Hyderabad</text><circle cx="411" cy="81" r="6" fill="#00629B"/><text x="398" y="87" text-anchor="end" font-family="Poppins,sans-serif" font-size="18" font-weight="600" fill="#20323C">Warangal</text><circle cx="535" cy="207" r="6" fill="#00629B"/><text x="522" y="213" text-anchor="end" font-family="Poppins,sans-serif" font-size="18" font-weight="600" fill="#20323C">Guntur</text><circle cx="186" cy="244" r="6" fill="#00629B"/><text x="199" y="250" text-anchor="start" font-family="Poppins,sans-serif" font-size="18" font-weight="600" fill="#20323C">Kurnool</text><circle cx="250" cy="270" r="6" fill="#00629B"/><text x="263" y="276" text-anchor="start" font-family="Poppins,sans-serif" font-size="18" font-weight="600" fill="#20323C">Nandyal</text><circle cx="122" cy="331" r="6" fill="#00629B"/><text x="135" y="337" text-anchor="start" font-family="Poppins,sans-serif" font-size="18" font-weight="600" fill="#20323C">Ananthapuramu</text><circle cx="299" cy="347" r="6" fill="#00629B"/><text x="312" y="353" text-anchor="start" font-family="Poppins,sans-serif" font-size="18" font-weight="600" fill="#20323C">Kadapa</text><circle cx="386" cy="411" r="6" fill="#00629B"/><text x="373" y="417" text-anchor="end" font-family="Poppins,sans-serif" font-size="18" font-weight="600" fill="#20323C">Tirupati</text><circle cx="468" cy="417" r="6" fill="#00629B"/><text x="455" y="445" text-anchor="end" font-family="Poppins,sans-serif" font-size="18" font-weight="600" fill="#20323C">Sri City</text></svg></div>
   <p class="mapnote">Illustrative map of key Section locations &mdash; not an official boundary map.</p>
 </div></section>
 
@@ -117,12 +171,18 @@ h2{font-size:clamp(24px,4vw,32px);font-weight:900;color:var(--bluedk);text-align
   </div>
 </div></section>
 
-<section class="contact"><div class="wrap">
+<section class="contact" id="contact"><div class="wrap">
   <h2>Get in touch</h2>
   <p class="lead">Questions or ideas? We'd genuinely like to hear from you &mdash; reach any of us.</p>
-  <div class="contacts"><div class="ccard"><span class="role">Candidate for Chair</span><strong>Atul Negi</strong><div class="clinks"><a href="mailto:atul.negi@ieee.org">atul.negi@ieee.org</a><a href="tel:+918008783737">+91 80087 83737</a><a href="https://www.linkedin.com/in/atul-negi-41182b156/" target="_blank" rel="noopener">LinkedIn</a></div></div><div class="ccard"><span class="role">Candidate for Vice-Chair</span><strong>Naresh Babu Muppalaneni</strong><div class="clinks"><a href="mailto:nareshmuppalaneni@ieee.org">nareshmuppalaneni@ieee.org</a><a href="tel:+918897165555">+91 88971 65555</a><a href="https://iiitk.ac.in/Dr.-Naresh-Babu-Muppalaneni/page" target="_blank" rel="noopener">Homepage</a></div></div><div class="ccard"><span class="role">Candidate for Secretary</span><strong>Vinit Kumar Gunjan</strong><div class="clinks"><a href="mailto:vinitkumargunjan@ieee.org">vinitkumargunjan@ieee.org</a><a href="tel:+919441328438">+91 94413 28438</a><a href="https://in.linkedin.com/in/vinitkumargunjan" target="_blank" rel="noopener">LinkedIn</a></div></div><div class="ccard"><span class="role">Candidate for Treasurer</span><strong>Saikumar Tara</strong><div class="clinks"><a href="mailto:saikumar9@ieee.org">saikumar9@ieee.org</a><a href="tel:+919849702404">+91 98497 02404</a><a href="https://www.linkedin.com/in/saikumar-tara-59b83b19/" target="_blank" rel="noopener">LinkedIn</a></div></div></div>
+  <div class="contacts"><div class="ccard"><span class="role">Candidate for Chair</span><strong>Atul Negi</strong><div class="clinks"><a class="l-mail" href="mailto:atul.negi@ieee.org">atul.negi@ieee.org</a><a class="l-tel" href="tel:+918008783737">+91 80087 83737</a><a class="l-web" href="https://www.linkedin.com/in/atul-negi-41182b156/" target="_blank" rel="noopener">LinkedIn</a></div></div><div class="ccard"><span class="role">Candidate for Vice-Chair</span><strong>Naresh Babu Muppalaneni</strong><div class="clinks"><a class="l-mail" href="mailto:nareshmuppalaneni@ieee.org">nareshmuppalaneni@ieee.org</a><a class="l-tel" href="tel:+918897165555">+91 88971 65555</a><a class="l-web" href="https://iiitk.ac.in/Dr.-Naresh-Babu-Muppalaneni/page" target="_blank" rel="noopener">Homepage</a></div></div><div class="ccard"><span class="role">Candidate for Secretary</span><strong>Vinit Kumar Gunjan</strong><div class="clinks"><a class="l-mail" href="mailto:vinitkumargunjan@ieee.org">vinitkumargunjan@ieee.org</a><a class="l-tel" href="tel:+919441328438">+91 94413 28438</a><a class="l-web" href="https://in.linkedin.com/in/vinitkumargunjan" target="_blank" rel="noopener">LinkedIn</a></div></div><div class="ccard"><span class="role">Candidate for Treasurer</span><strong>Saikumar Tara</strong><div class="clinks"><a class="l-mail" href="mailto:saikumar9@ieee.org">saikumar9@ieee.org</a><a class="l-tel" href="tel:+919849702404">+91 98497 02404</a><a class="l-web" href="https://www.linkedin.com/in/saikumar-tara-59b83b19/" target="_blank" rel="noopener">LinkedIn</a></div></div></div>
 </div></section>
 
 <footer class="foot">Personal campaign communication shared with fellow IEEE members. The opinions expressed herein are the opinions of the authors and not necessarily the opinions of IEEE. Not an official IEEE communication, and not endorsed by IEEE.</footer>
+<script>
+(function(){var d=document.documentElement;if(!('IntersectionObserver' in window))return;d.classList.add('js');
+var els=document.querySelectorAll('.tcard,.card,.rcard,.ccard,.mapbox,.vote');
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -40px 0px'});
+els.forEach(function(el,i){el.classList.add('rv');el.style.transitionDelay=((i%4)*70)+'ms';el.addEventListener('transitionend',function f(ev){if(ev.propertyName!=='opacity')return;el.classList.remove('rv','in');el.style.transitionDelay='';el.removeEventListener('transitionend',f);});io.observe(el);});})();
+</script>
 </body>
 </html>
