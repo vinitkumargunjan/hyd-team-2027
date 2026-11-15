@@ -95,8 +95,8 @@ h2::after{content:"";display:block;width:46px;height:4px;border-radius:4px;margi
 #vote{padding-top:24px}
 .vote{position:relative;overflow:hidden;color:#fff;border-radius:26px;padding:52px 32px;text-align:center;background:radial-gradient(600px 300px at 100% 0%,rgba(224,122,79,.35),transparent 60%),linear-gradient(150deg,var(--navy),var(--bluedk) 60%,var(--blue));box-shadow:var(--shadow-lg)}
 .vote ol{list-style:none;counter-reset:s;text-align:left;max-width:600px;margin:30px auto 0;display:grid;gap:12px}
-.vote li{counter-increment:s;display:flex;gap:16px;align-items:center;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:14px 18px;color:#E3EEF4}
-.vote li::before{content:counter(s);flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-weight:800;background:var(--warm);color:#fff}
+.vote li{counter-increment:s;position:relative;padding-left:66px!important;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:14px 18px;color:#E3EEF4}
+.vote li::before{content:counter(s);position:absolute;left:18px;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-weight:800;background:var(--warm);color:#fff}
 .vote b{color:#fff}
 .vote .date{display:inline-block;background:#fff;color:var(--bluedk);font-weight:700;padding:10px 22px;border-radius:999px;margin-top:28px}
 /* contact */
@@ -161,6 +161,16 @@ h2::after{content:"";display:block;width:46px;height:4px;border-radius:4px;margi
 .pvote{margin-top:16px;font-size:14px;color:var(--muted)}
 body.modal-open{overflow:hidden}
 @media(max-width:640px){.phead{flex-direction:column;text-align:center;padding:30px 20px 24px}.pbadges{justify-content:center}.pbody{padding:22px 18px 26px}.ppromise,.pjourney{grid-template-columns:1fr}.pav{width:112px;height:112px}}
+/* voices */
+.voices{background:#fff}
+.qgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.quote{position:relative;background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:46px 24px 22px;display:flex;flex-direction:column;justify-content:space-between;gap:18px}
+.quote::before{content:"\201C";position:absolute;top:-4px;left:20px;font-size:72px;line-height:1;font-weight:900;color:var(--warm)}
+.quote blockquote{font-size:15.5px;color:var(--ink);line-height:1.65}
+.quote figcaption{display:flex;align-items:center;gap:12px;padding-top:14px;border-top:1px dashed var(--line)}
+.quote .qi{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:14px;color:#fff;background:linear-gradient(135deg,var(--blue),var(--bluedk))}
+.quote b{display:block;color:var(--bluedk);font-size:15px;line-height:1.25}
+.quote small{display:block;color:var(--muted);font-size:13px;line-height:1.35}
 /* reveal */
 .js .rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
 .js .rv.in{opacity:1;transform:none}
@@ -203,6 +213,19 @@ body.modal-open{overflow:hidden}
   <p class="lead">From Hyderabad to Warangal, Guntur, Kurnool, Nandyal, Ananthapuramu, Kadapa, Tirupati and Sri City &mdash; across Telangana and Andhra Pradesh.</p>
   <div class="mapbox"><svg viewBox="0 0 680 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Map of key IEEE Hyderabad Section locations"><line x1="251" y1="125" x2="411" y2="81" stroke="#D9A98A" stroke-width="1.6" opacity=".55"/><line x1="251" y1="125" x2="535" y2="207" stroke="#D9A98A" stroke-width="1.6" opacity=".55"/><line x1="251" y1="125" x2="186" y2="244" stroke="#D9A98A" stroke-width="1.6" opacity=".55"/><line x1="251" y1="125" x2="250" y2="270" stroke="#D9A98A" stroke-width="1.6" opacity=".55"/><line x1="251" y1="125" x2="122" y2="331" stroke="#D9A98A" stroke-width="1.6" opacity=".55"/><line x1="251" y1="125" x2="299" y2="347" stroke="#D9A98A" stroke-width="1.6" opacity=".55"/><line x1="251" y1="125" x2="386" y2="411" stroke="#D9A98A" stroke-width="1.6" opacity=".55"/><line x1="251" y1="125" x2="468" y2="417" stroke="#D9A98A" stroke-width="1.6" opacity=".55"/><circle class="pulse" cx="251" cy="125" r="17" fill="none" stroke="#BD4A2A" stroke-width="2" opacity=".35"/><circle cx="251" cy="125" r="10" fill="#BD4A2A"/><text x="264" y="131" text-anchor="start" font-family="Poppins,sans-serif" font-size="18" font-weight="800" fill="#20323C">Hyderabad</text><circle cx="411" cy="81" r="6" fill="#00629B"/><text x="398" y="87" text-anchor="end" font-family="Poppins,sans-serif" font-size="18" font-weight="600" fill="#20323C">Warangal</text><circle cx="535" cy="207" r="6" fill="#00629B"/><text x="522" y="213" text-anchor="end" font-family="Poppins,sans-serif" font-size="18" font-weight="600" fill="#20323C">Guntur</text><circle cx="186" cy="244" r="6" fill="#00629B"/><text x="199" y="250" text-anchor="start" font-family="Poppins,sans-serif" font-size="18" font-weight="600" fill="#20323C">Kurnool</text><circle cx="250" cy="270" r="6" fill="#00629B"/><text x="263" y="276" text-anchor="start" font-family="Poppins,sans-serif" font-size="18" font-weight="600" fill="#20323C">Nandyal</text><circle cx="122" cy="331" r="6" fill="#00629B"/><text x="135" y="337" text-anchor="start" font-family="Poppins,sans-serif" font-size="18" font-weight="600" fill="#20323C">Ananthapuramu</text><circle cx="299" cy="347" r="6" fill="#00629B"/><text x="312" y="353" text-anchor="start" font-family="Poppins,sans-serif" font-size="18" font-weight="600" fill="#20323C">Kadapa</text><circle cx="386" cy="411" r="6" fill="#00629B"/><text x="373" y="417" text-anchor="end" font-family="Poppins,sans-serif" font-size="18" font-weight="600" fill="#20323C">Tirupati</text><circle cx="468" cy="417" r="6" fill="#00629B"/><text x="455" y="445" text-anchor="end" font-family="Poppins,sans-serif" font-size="18" font-weight="600" fill="#20323C">Sri City</text></svg></div>
   <p class="mapnote">Illustrative map of key Section locations &mdash; not an official boundary map.</p>
+</div></section>
+
+<section id="voices" class="voices" hidden><div class="wrap">
+  <h2>What members say</h2>
+  <p class="lead">In their own words &mdash; shared in a personal capacity, with permission.</p>
+  <div class="qgrid">
+<!-- ADD QUOTES HERE (only real, consented quotes). Copy this block once per quote, then remove the 'hidden' attribute on the section above.
+    <figure class="quote">
+      <blockquote>Their exact words go here.</blockquote>
+      <figcaption><span class="qi">AB</span><span><b>Full Name</b><small>College / role, personal capacity</small></span></figcaption>
+    </figure>
+-->
+  </div>
 </div></section>
 
 <section id="vote"><div class="wrap">
@@ -274,7 +297,7 @@ body.modal-open{overflow:hidden}
 <footer class="foot">Personal campaign communication shared with fellow IEEE members. The opinions expressed herein are the opinions of the authors and not necessarily the opinions of IEEE. Not an official IEEE communication, and not endorsed by IEEE.</footer>
 <script>
 (function(){var d=document.documentElement;if(!('IntersectionObserver' in window))return;d.classList.add('js');
-var els=document.querySelectorAll('.tcard,.card,.rcard,.ccard,.mapbox,.vote');
+var els=document.querySelectorAll('.tcard,.card,.rcard,.ccard,.mapbox,.vote,.quote');
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -40px 0px'});
 els.forEach(function(el,i){el.classList.add('rv');el.style.transitionDelay=((i%4)*70)+'ms';el.addEventListener('transitionend',function f(ev){if(ev.propertyName!=='opacity')return;el.classList.remove('rv','in');el.style.transitionDelay='';el.removeEventListener('transitionend',f);});io.observe(el);});})();
 </script>
